@@ -35,7 +35,7 @@ All eight predictors are observed in **7,843 development people (220 events)** a
 - The observed maxima include systolic BP 266 mmHg, BMI 130.21 kg/m², total cholesterol 727 mg/dL, and HDL 188 mg/dL. These are audit flags, not automatic exclusions. Review source records and define clinically justified validation rules before training or building the input form.
 - The temporal evaluation set has only 87 events. Overall AUROC and calibration can be estimated, but intervals may be wide. Age-by-recorded-gender cells in that set have only 6–28 events; subgroup performance should be exploratory and reported with uncertainty rather than as strong fairness conclusions.
 - CDC documents HDL assay changes over these cycles. A change between development and evaluation could reflect measurement methods as well as population differences.
-- The 2019 public-use mortality file contains privacy-protecting substitutions for some follow-up times and causes. Claims about exact individual risk or clinical use require stronger validation, ideally with restricted-use data and external populations.
+- The 2019 public-use mortality file contains privacy-protecting substitutions for some follow-up times and causes. Claims about exact individual risk or clinical use require stronger validation. This project has no hospital or restricted-use data access, so such claims are outside its scope.
 - NHANES has a complex sample design. The raw cohort retains sample weights, strata, and PSU identifiers; population-level estimates and interval methods need a documented design-aware analysis plan.
 
 ## Next research gate

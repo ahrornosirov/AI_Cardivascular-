@@ -1,6 +1,6 @@
 # Research Protocol v1
 
-**Status:** Target confirmed by the project owner on 6 October 2026; cohort feasibility audit completed the same day. This protocol is ready for team review before model fitting. Do not report clinical performance or publish a risk calculator from this protocol alone. The title and traceability below were checked against the team's Week 3 submission dated 2 October 2026.
+**Status:** Target confirmed by the project owner on 6 October 2026; cohort feasibility audit completed the same day. The team has no access to hospital records or private ten-year outcomes, so the current study uses public NHANES data only. This protocol is ready for team review before model fitting. Do not report clinical performance or publish a risk calculator from this protocol alone. The title and traceability below were checked against the team's Week 3 submission dated 2 October 2026.
 
 ## 1. Research aim and traceability
 
@@ -23,11 +23,11 @@
 - **Outcome:** Death from diseases of the heart or cerebrovascular disease within 120 months after the baseline examination, based on the CDC linked mortality file's underlying-cause categories `001` and `005` and follow-up time `PERMTH_EXM`.
 - **Horizon:** 10 years. Use the exact label **“10-year cardiovascular mortality risk.”** Do not call this incident CVD, nonfatal CVD, heart-disease diagnosis, or a general CVD-event model.
 - **Estimand:** Probability of cardiovascular death within ten years under the observed mix of competing causes of death. A non-cardiovascular death before ten years is a non-event for this binary ten-year outcome; do not treat it as a missing outcome. Exclude or otherwise account for people whose status at ten years cannot be determined.
-- **Setting:** Retrospective model development and evaluation. The future web form is a research demonstration and must describe its US source population and limitations.
+- **Setting:** Retrospective model development and evaluation using public data. The future web form is a research demonstration using synthetic example patients and must describe its US source population and limitations. Hospital integration and patient-care deployment are outside the current scope.
 
 ## 3. Data source and decision gate
 
-**Selected source for the research prototype:** NHANES 1999–2008 examination, laboratory, demographic, and questionnaire data linked by `SEQN` to the CDC 2019 public-use Linked Mortality Files. The baseline cycles 1999–2008 have potential ten-year follow-up through 31 December 2019. The public-use mortality data contain privacy-protecting substitutions for some follow-up times and causes of death, which limits individual-risk and calibration claims. The team should seek restricted-use verification if publication or clinical translation is intended.
+**Selected source for the research prototype:** NHANES 1999–2008 examination, laboratory, demographic, and questionnaire data linked by `SEQN` to the CDC 2019 public-use Linked Mortality Files. The baseline cycles 1999–2008 have potential ten-year follow-up through 31 December 2019. The public-use mortality data contain privacy-protecting substitutions for some follow-up times and causes of death, which limits individual-risk and calibration claims. Restricted-use or hospital data are not prerequisites for the current university prototype; stronger independent verification would be needed for future clinical translation.
 
 **Why this source:** It has a documented time horizon and a clearly defined fatal outcome, and its public files can be reproduced. The NHLBI Framingham *teaching* dataset is suitable for instruction but explicitly unsuitable for publication. The full Framingham cohort has incident CVD outcomes, but access requires ethics review and approval; it is a possible later replacement if the team obtains access.
 
@@ -73,7 +73,7 @@ Do not present a fabricated individual “confidence” score or interval. A pre
 
 ## 7. Prototype output
 
-Only after evaluation, the web prototype may accept validated inputs and show the model estimate, exact outcome/horizon, source population, factor explanations, missing-input status, and a plain-language research-use notice. Low/medium/high categories require thresholds chosen for a stated research purpose and checked for calibration; do not copy thresholds from a different endpoint or region.
+Only after evaluation, the web prototype may accept validated synthetic example inputs and show the model estimate, exact outcome/horizon, source population, factor explanations, missing-input status, and a plain-language research-use notice. Low/medium/high categories require thresholds chosen for a stated research purpose and checked for calibration; do not copy thresholds from a different endpoint or region.
 
 WHO Central Asia charts are relevant literature context, but a US cardiovascular-**mortality** model cannot be directly compared to their broader regional CVD-event risk without matching population and endpoint.
 
@@ -84,7 +84,7 @@ Use the 27-item TRIPOD+AI checklist to plan and report the study. Preserve code,
 ## 9. Open decisions for team review
 
 1. Review whether the 87-event temporal evaluation set supports the intended precision; avoid strong subgroup claims.
-2. Confirm publication ambitions and whether restricted data or institutional ethics approval are feasible.
+2. Keep any later hospital-data partnership or clinical pilot separate from this public-data study.
 3. Clinically review the extreme baseline values and the planned input-validation ranges before model fitting.
 4. Specify the survey-design and combined-weight analysis strategy before population-level claims.
 5. Confirm whether the final demo is for clinicians, students, or researchers; wording and comprehension testing depend on this.

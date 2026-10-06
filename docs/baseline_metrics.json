@@ -1,0 +1,56 @@
+{
+  "study_status": "Preliminary research baseline; not clinically validated",
+  "model": "Logistic regression; C=1.0; no class weighting; median/mode imputation inside folds",
+  "cross_validation": "Five stratified development folds; random_state=20261006",
+  "interval_note": "95% person-level bootstrap percentile intervals, conditional on fixed predictions; NHANES survey design not accounted for",
+  "splits": {
+    "Development, out-of-fold": {
+      "n": 8902,
+      "events": 274,
+      "prevalence": 0.03078,
+      "auroc": 0.776872,
+      "auprc": 0.123704,
+      "brier": 0.028412,
+      "calibration_intercept": -0.124801,
+      "calibration_slope": 0.958293,
+      "bootstrap_95pct": {
+        "auroc": [
+          0.74854,
+          0.803489
+        ],
+        "auprc": [
+          0.0973,
+          0.15999
+        ],
+        "brier": [
+          0.02548,
+          0.0315
+        ]
+      }
+    },
+    "2007-08 held-out": {
+      "n": 2941,
+      "events": 87,
+      "prevalence": 0.029582,
+      "auroc": 0.777678,
+      "auprc": 0.080059,
+      "brier": 0.028131,
+      "calibration_intercept": -0.223455,
+      "calibration_slope": 0.925793,
+      "bootstrap_95pct": {
+        "auroc": [
+          0.738167,
+          0.818695
+        ],
+        "auprc": [
+          0.058636,
+          0.113528
+        ],
+        "brier": [
+          0.023123,
+          0.033991
+        ]
+      }
+    }
+  }
+}
