@@ -1,0 +1,481 @@
+{
+  "target": "Cardiovascular death within 120 months of NHANES examination",
+  "population": "US NHANES examined adults 40-79 with definite no on five self-reported prior-CVD questions",
+  "source_manifest_sha256": "61809a58b940b5d90f2785d90e81373ee3f7a6b1fd530d15b5ef5e2aa6a557a0",
+  "stages": [
+    {
+      "cycle": "1999-2000",
+      "stage": "survey_rows",
+      "n": 9965
+    },
+    {
+      "cycle": "1999-2000",
+      "stage": "examined_age_40_79",
+      "n": 2553
+    },
+    {
+      "cycle": "1999-2000",
+      "stage": "mortality_linkage_eligible",
+      "n": 2550
+    },
+    {
+      "cycle": "1999-2000",
+      "stage": "known_10y_outcome",
+      "n": 2550
+    },
+    {
+      "cycle": "1999-2000",
+      "stage": "no_reported_prior_cvd",
+      "n": 2179
+    },
+    {
+      "cycle": "1999-2000",
+      "stage": "confirmed_no_prior_cvd",
+      "n": 2157
+    },
+    {
+      "cycle": "1999-2000",
+      "stage": "final_primary_prevention_cohort",
+      "n": 2157
+    },
+    {
+      "cycle": "2001-2002",
+      "stage": "survey_rows",
+      "n": 11039
+    },
+    {
+      "cycle": "2001-2002",
+      "stage": "examined_age_40_79",
+      "n": 2782
+    },
+    {
+      "cycle": "2001-2002",
+      "stage": "mortality_linkage_eligible",
+      "n": 2779
+    },
+    {
+      "cycle": "2001-2002",
+      "stage": "known_10y_outcome",
+      "n": 2778
+    },
+    {
+      "cycle": "2001-2002",
+      "stage": "no_reported_prior_cvd",
+      "n": 2407
+    },
+    {
+      "cycle": "2001-2002",
+      "stage": "confirmed_no_prior_cvd",
+      "n": 2383
+    },
+    {
+      "cycle": "2001-2002",
+      "stage": "final_primary_prevention_cohort",
+      "n": 2383
+    },
+    {
+      "cycle": "2003-2004",
+      "stage": "survey_rows",
+      "n": 10122
+    },
+    {
+      "cycle": "2003-2004",
+      "stage": "examined_age_40_79",
+      "n": 2637
+    },
+    {
+      "cycle": "2003-2004",
+      "stage": "mortality_linkage_eligible",
+      "n": 2630
+    },
+    {
+      "cycle": "2003-2004",
+      "stage": "known_10y_outcome",
+      "n": 2630
+    },
+    {
+      "cycle": "2003-2004",
+      "stage": "no_reported_prior_cvd",
+      "n": 2187
+    },
+    {
+      "cycle": "2003-2004",
+      "stage": "confirmed_no_prior_cvd",
+      "n": 2178
+    },
+    {
+      "cycle": "2003-2004",
+      "stage": "final_primary_prevention_cohort",
+      "n": 2178
+    },
+    {
+      "cycle": "2005-2006",
+      "stage": "survey_rows",
+      "n": 10348
+    },
+    {
+      "cycle": "2005-2006",
+      "stage": "examined_age_40_79",
+      "n": 2576
+    },
+    {
+      "cycle": "2005-2006",
+      "stage": "mortality_linkage_eligible",
+      "n": 2576
+    },
+    {
+      "cycle": "2005-2006",
+      "stage": "known_10y_outcome",
+      "n": 2576
+    },
+    {
+      "cycle": "2005-2006",
+      "stage": "no_reported_prior_cvd",
+      "n": 2198
+    },
+    {
+      "cycle": "2005-2006",
+      "stage": "confirmed_no_prior_cvd",
+      "n": 2184
+    },
+    {
+      "cycle": "2005-2006",
+      "stage": "final_primary_prevention_cohort",
+      "n": 2184
+    },
+    {
+      "cycle": "2007-2008",
+      "stage": "survey_rows",
+      "n": 10149
+    },
+    {
+      "cycle": "2007-2008",
+      "stage": "examined_age_40_79",
+      "n": 3474
+    },
+    {
+      "cycle": "2007-2008",
+      "stage": "mortality_linkage_eligible",
+      "n": 3473
+    },
+    {
+      "cycle": "2007-2008",
+      "stage": "known_10y_outcome",
+      "n": 3473
+    },
+    {
+      "cycle": "2007-2008",
+      "stage": "no_reported_prior_cvd",
+      "n": 2965
+    },
+    {
+      "cycle": "2007-2008",
+      "stage": "confirmed_no_prior_cvd",
+      "n": 2941
+    },
+    {
+      "cycle": "2007-2008",
+      "stage": "final_primary_prevention_cohort",
+      "n": 2941
+    }
+  ],
+  "summary": [
+    {
+      "role": "development",
+      "n": 8902,
+      "events": 274,
+      "event_pct": 3.08,
+      "complete_cases": 7843
+    },
+    {
+      "role": "evaluation",
+      "n": 2941,
+      "events": 87,
+      "event_pct": 2.96,
+      "complete_cases": 2611
+    }
+  ],
+  "missingness": [
+    {
+      "cycle": "1999-2000",
+      "variable": "age_years",
+      "n": 2157,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "cycle": "1999-2000",
+      "variable": "gender_code",
+      "n": 2157,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "cycle": "1999-2000",
+      "variable": "systolic_bp_mmhg",
+      "n": 2157,
+      "missing": 69,
+      "missing_pct": 3.2
+    },
+    {
+      "cycle": "1999-2000",
+      "variable": "bmi",
+      "n": 2157,
+      "missing": 24,
+      "missing_pct": 1.11
+    },
+    {
+      "cycle": "1999-2000",
+      "variable": "total_cholesterol_mg_dl",
+      "n": 2157,
+      "missing": 149,
+      "missing_pct": 6.91
+    },
+    {
+      "cycle": "1999-2000",
+      "variable": "hdl_cholesterol_mg_dl",
+      "n": 2157,
+      "missing": 149,
+      "missing_pct": 6.91
+    },
+    {
+      "cycle": "1999-2000",
+      "variable": "current_smoker",
+      "n": 2157,
+      "missing": 3,
+      "missing_pct": 0.14
+    },
+    {
+      "cycle": "1999-2000",
+      "variable": "diabetes",
+      "n": 2157,
+      "missing": 30,
+      "missing_pct": 1.39
+    },
+    {
+      "cycle": "2001-2002",
+      "variable": "age_years",
+      "n": 2383,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "cycle": "2001-2002",
+      "variable": "gender_code",
+      "n": 2383,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "cycle": "2001-2002",
+      "variable": "systolic_bp_mmhg",
+      "n": 2383,
+      "missing": 107,
+      "missing_pct": 4.49
+    },
+    {
+      "cycle": "2001-2002",
+      "variable": "bmi",
+      "n": 2383,
+      "missing": 116,
+      "missing_pct": 4.87
+    },
+    {
+      "cycle": "2001-2002",
+      "variable": "total_cholesterol_mg_dl",
+      "n": 2383,
+      "missing": 132,
+      "missing_pct": 5.54
+    },
+    {
+      "cycle": "2001-2002",
+      "variable": "hdl_cholesterol_mg_dl",
+      "n": 2383,
+      "missing": 132,
+      "missing_pct": 5.54
+    },
+    {
+      "cycle": "2001-2002",
+      "variable": "current_smoker",
+      "n": 2383,
+      "missing": 5,
+      "missing_pct": 0.21
+    },
+    {
+      "cycle": "2001-2002",
+      "variable": "diabetes",
+      "n": 2383,
+      "missing": 43,
+      "missing_pct": 1.8
+    },
+    {
+      "cycle": "2003-2004",
+      "variable": "age_years",
+      "n": 2178,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "cycle": "2003-2004",
+      "variable": "gender_code",
+      "n": 2178,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "cycle": "2003-2004",
+      "variable": "systolic_bp_mmhg",
+      "n": 2178,
+      "missing": 126,
+      "missing_pct": 5.79
+    },
+    {
+      "cycle": "2003-2004",
+      "variable": "bmi",
+      "n": 2178,
+      "missing": 36,
+      "missing_pct": 1.65
+    },
+    {
+      "cycle": "2003-2004",
+      "variable": "total_cholesterol_mg_dl",
+      "n": 2178,
+      "missing": 98,
+      "missing_pct": 4.5
+    },
+    {
+      "cycle": "2003-2004",
+      "variable": "hdl_cholesterol_mg_dl",
+      "n": 2178,
+      "missing": 98,
+      "missing_pct": 4.5
+    },
+    {
+      "cycle": "2003-2004",
+      "variable": "current_smoker",
+      "n": 2178,
+      "missing": 2,
+      "missing_pct": 0.09
+    },
+    {
+      "cycle": "2003-2004",
+      "variable": "diabetes",
+      "n": 2178,
+      "missing": 32,
+      "missing_pct": 1.47
+    },
+    {
+      "cycle": "2005-2006",
+      "variable": "age_years",
+      "n": 2184,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "cycle": "2005-2006",
+      "variable": "gender_code",
+      "n": 2184,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "cycle": "2005-2006",
+      "variable": "systolic_bp_mmhg",
+      "n": 2184,
+      "missing": 95,
+      "missing_pct": 4.35
+    },
+    {
+      "cycle": "2005-2006",
+      "variable": "bmi",
+      "n": 2184,
+      "missing": 26,
+      "missing_pct": 1.19
+    },
+    {
+      "cycle": "2005-2006",
+      "variable": "total_cholesterol_mg_dl",
+      "n": 2184,
+      "missing": 93,
+      "missing_pct": 4.26
+    },
+    {
+      "cycle": "2005-2006",
+      "variable": "hdl_cholesterol_mg_dl",
+      "n": 2184,
+      "missing": 93,
+      "missing_pct": 4.26
+    },
+    {
+      "cycle": "2005-2006",
+      "variable": "current_smoker",
+      "n": 2184,
+      "missing": 1,
+      "missing_pct": 0.05
+    },
+    {
+      "cycle": "2005-2006",
+      "variable": "diabetes",
+      "n": 2184,
+      "missing": 43,
+      "missing_pct": 1.97
+    },
+    {
+      "cycle": "2007-2008",
+      "variable": "age_years",
+      "n": 2941,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "cycle": "2007-2008",
+      "variable": "gender_code",
+      "n": 2941,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "cycle": "2007-2008",
+      "variable": "systolic_bp_mmhg",
+      "n": 2941,
+      "missing": 120,
+      "missing_pct": 4.08
+    },
+    {
+      "cycle": "2007-2008",
+      "variable": "bmi",
+      "n": 2941,
+      "missing": 40,
+      "missing_pct": 1.36
+    },
+    {
+      "cycle": "2007-2008",
+      "variable": "total_cholesterol_mg_dl",
+      "n": 2941,
+      "missing": 155,
+      "missing_pct": 5.27
+    },
+    {
+      "cycle": "2007-2008",
+      "variable": "hdl_cholesterol_mg_dl",
+      "n": 2941,
+      "missing": 155,
+      "missing_pct": 5.27
+    },
+    {
+      "cycle": "2007-2008",
+      "variable": "current_smoker",
+      "n": 2941,
+      "missing": 3,
+      "missing_pct": 0.1
+    },
+    {
+      "cycle": "2007-2008",
+      "variable": "diabetes",
+      "n": 2941,
+      "missing": 56,
+      "missing_pct": 1.9
+    }
+  ],
+  "output": "data/processed/cohort_v1.csv"
+}

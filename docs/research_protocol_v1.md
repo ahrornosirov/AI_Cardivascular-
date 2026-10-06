@@ -1,6 +1,6 @@
 # Research Protocol v1
 
-**Status:** Draft for team review, 5 October 2026. The outcome wording is fixed for this draft; dataset inclusion and predictor harmonization remain feasibility gates. Do not report clinical performance or publish a risk calculator from this protocol alone. The title and traceability below were checked against the team's Week 3 submission dated 2 October 2026.
+**Status:** Target confirmed by the project owner on 6 October 2026; cohort feasibility audit completed the same day. This protocol is ready for team review before model fitting. Do not report clinical performance or publish a risk calculator from this protocol alone. The title and traceability below were checked against the team's Week 3 submission dated 2 October 2026.
 
 ## 1. Research aim and traceability
 
@@ -18,7 +18,7 @@
 
 ## 2. Prediction task
 
-- **Target population:** Adults in the US NHANES baseline survey, provisionally ages 40–79, with linked mortality eligibility. A primary-prevention subset will exclude baseline self-reported coronary heart disease, myocardial infarction, stroke, and possibly heart failure, subject to variable availability across cycles. Report all exclusions and reasons.
+- **Target population:** Examined adults ages 40–79 in the US NHANES baseline survey, eligible for mortality linkage and with a known ten-year outcome. The primary-prevention cohort excludes any self-reported prior congestive heart failure, coronary heart disease, angina, myocardial infarction, or stroke and requires definite “no” answers to all five questions. The cohort report records the exclusions.
 - **Prediction time:** The baseline NHANES interview/examination. All predictors must be measured at or before that point.
 - **Outcome:** Death from diseases of the heart or cerebrovascular disease within 120 months after the baseline examination, based on the CDC linked mortality file's underlying-cause categories `001` and `005` and follow-up time `PERMTH_EXM`.
 - **Horizon:** 10 years. Use the exact label **“10-year cardiovascular mortality risk.”** Do not call this incident CVD, nonfatal CVD, heart-disease diagnosis, or a general CVD-event model.
@@ -27,30 +27,30 @@
 
 ## 3. Data source and decision gate
 
-**Primary candidate:** NHANES 1999–2008 examination, laboratory, demographic, and questionnaire data linked by `SEQN` to the CDC 2019 public-use Linked Mortality Files. The baseline cycles 1999–2008 have potential ten-year follow-up through 31 December 2019. The public-use mortality data contain privacy-protecting substitutions for some follow-up times and causes of death, which limits individual-risk and calibration claims. The team should seek restricted-use verification if publication or clinical translation is intended.
+**Selected source for the research prototype:** NHANES 1999–2008 examination, laboratory, demographic, and questionnaire data linked by `SEQN` to the CDC 2019 public-use Linked Mortality Files. The baseline cycles 1999–2008 have potential ten-year follow-up through 31 December 2019. The public-use mortality data contain privacy-protecting substitutions for some follow-up times and causes of death, which limits individual-risk and calibration claims. The team should seek restricted-use verification if publication or clinical translation is intended.
 
-**Why this candidate:** It has a documented time horizon and a clearly defined fatal outcome, and its public files can be reproduced. The NHLBI Framingham *teaching* dataset is suitable for instruction but explicitly unsuitable for publication. The full Framingham cohort has incident CVD outcomes, but access requires ethics review and approval; it is a possible later replacement if the team obtains access.
+**Why this source:** It has a documented time horizon and a clearly defined fatal outcome, and its public files can be reproduced. The NHLBI Framingham *teaching* dataset is suitable for instruction but explicitly unsuitable for publication. The full Framingham cohort has incident CVD outcomes, but access requires ethics review and approval; it is a possible later replacement if the team obtains access.
 
-**Feasibility gate before training:**
+**Feasibility checks before training:**
 
-1. Obtain and record exact CDC file URLs, versions, download dates, and checksums.
-2. Harmonize candidate predictors across all selected NHANES cycles and verify units and collection timing.
-3. Count eligible participants and events after the age, prior-CVD, completeness, and follow-up rules. Inspect event counts in the evaluation cycle and planned subgroups.
-4. Check the effect of privacy substitutions and the NHANES complex survey design on analysis and interpretation.
-5. If events or predictor coverage are insufficient, choose a different population, horizon, or approved longitudinal dataset **before** training; revise the title and outcome description accordingly.
+1. **Completed:** Record exact CDC file URLs and checksums in the source manifest; downloaded 6 October 2026.
+2. **Completed:** Harmonize eight baseline predictors across all selected NHANES cycles and document units and collection timing.
+3. **Completed:** Count eligible participants, exclusions, and events; inspect evaluation and subgroup event counts.
+4. **Open:** Define the analysis response to privacy substitutions and the NHANES complex survey design, including uncertainty and weighting.
+5. **Open:** Review extreme values and whether 87 held-out events are sufficient for the claims planned in the paper.
 
-The preliminary mortality-file audit is in [dataset_feasibility.md](dataset_feasibility.md). It is not a final analytic cohort.
+The preliminary mortality-file audit is in [dataset_feasibility.md](dataset_feasibility.md). The joined primary-prevention cohort and its flow are in [cohort_report_v1.md](cohort_report_v1.md), with variable definitions in [data_dictionary_v1.md](data_dictionary_v1.md).
 
 ## 4. Candidate predictors
 
-Freeze the final list after the codebook audit. Initial candidates measured at baseline: age, sex as recorded by NHANES, systolic blood pressure, body mass index, total cholesterol, HDL cholesterol, current smoking, diabetes status, and antihypertensive treatment. Physical activity and further lifestyle variables are exploratory only if questions and coding are comparable across cycles. Never derive a predictor from follow-up, death certificate, or outcome fields.
+The eight core predictors measured at baseline are age, NHANES recorded gender category, systolic blood pressure, body mass index, total cholesterol, HDL cholesterol, current smoking, and self-reported diabetes. Antihypertensive treatment and physical activity are deferred until their cross-cycle coding is justified. Never derive a predictor from follow-up, death certificate, or outcome fields.
 
 Represent missing values explicitly. Define plausible input ranges from source documentation and clinical review. Show missingness and invalidity by variable and cycle. Fit all imputation, scaling, and encoding steps on the development folds only. Compare complete-case and prespecified imputation approaches as a sensitivity analysis.
 
 ## 5. Study design and models
 
-- **Development:** NHANES 1999–2006, pending final feasibility checks. Use cross-validation for feature processing, tuning, and model selection; keep each participant within a single fold.
-- **Temporal evaluation:** NHANES 2007–2008, pending event count and predictor harmonization. Do not inspect it for choosing hyperparameters, thresholds, calibration methods, or the winning model.
+- **Development:** NHANES 1999–2006: 8,902 people and 274 target events after cohort exclusions. Use cross-validation for feature processing, tuning, and model selection; keep each participant within a single fold.
+- **Temporal evaluation:** NHANES 2007–2008: 2,941 people and 87 target events. Do not inspect it for choosing hyperparameters, thresholds, calibration methods, or the winning model.
 - **Models:** Logistic regression as the transparent baseline; random forest; one gradient-boosted tree implementation if event count supports it. Predefine a simple prevalence or conventional-score comparator only if its endpoint and population are compatible.
 - **Calibration:** Fit sigmoid or isotonic calibration only inside development data using disjoint folds. Select one method through cross-validation. Evaluate its final performance once on the temporal set.
 - **Outcome balance:** Report event counts and prevalence before choosing model complexity or subgroup comparisons. The preliminary public mortality-file count is about 4–5% before study exclusions.
@@ -66,7 +66,7 @@ Report denominators, event counts, point estimates, and 95% intervals where supp
 | Calibration | Calibration curve, calibration intercept and slope, Brier score, observed versus predicted ten-year risk |
 | Decision thresholds | Sensitivity, specificity, and predictive values only at thresholds justified before test-set inspection; no clinical action threshold is assumed |
 | Missingness | Percent missing, invalid, imputed, and complete-case; performance sensitivity across handling strategies |
-| Subgroups | Age and sex groups if event counts support stable estimates; intervals and explicit small-cell limitations |
+| Subgroups | Age and NHANES recorded gender groups as exploratory analyses only; the held-out age-by-gender cells contain just 6–28 events |
 | Robustness | Bootstrap intervals where appropriate; cycle-level and complete-case sensitivity analyses |
 
 Do not present a fabricated individual “confidence” score or interval. A prediction interval, model uncertainty summary, or data-completeness warning requires a defined method and empirical checking before it appears in the UI. SHAP values describe how the model produced a prediction, not causal effects or treatment benefits. Any percentage-point contribution shown in the UI must be computed on the calibrated probability scale or described more carefully.
@@ -83,10 +83,10 @@ Use the 27-item TRIPOD+AI checklist to plan and report the study. Preserve code,
 
 ## 9. Open decisions for team review
 
-1. Confirm that ten-year cardiovascular **mortality** answers the assignment's intended question, or obtain an incident-event cohort and revise the outcome.
+1. Review whether the 87-event temporal evaluation set supports the intended precision; avoid strong subgroup claims.
 2. Confirm publication ambitions and whether restricted data or institutional ethics approval are feasible.
-3. Confirm baseline age range and primary-prevention exclusions after examining counts.
-4. Confirm the exact predictors after cross-cycle codebook review.
+3. Clinically review the extreme baseline values and the planned input-validation ranges before model fitting.
+4. Specify the survey-design and combined-weight analysis strategy before population-level claims.
 5. Confirm whether the final demo is for clinicians, students, or researchers; wording and comprehension testing depend on this.
 
 ## Sources
