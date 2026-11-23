@@ -5,9 +5,11 @@
 | Document | PDF | Editable |
 | --- | --- | --- |
 | Cumulative IMRAD outline | [PDF](manuscripts/CardioRisk_Cumulative_IMRAD_v2.pdf) | [Word](manuscripts/CardioRisk_Cumulative_IMRAD_v2.docx) |
-| Research proposal | — | [Word](manuscripts/CardioRisk_Research_Proposal.docx) |
+| Research proposal | [PDF](manuscripts/CardioRisk_Research_Proposal.pdf) | [Word](manuscripts/CardioRisk_Research_Proposal.docx) |
 | Earlier IMRAD outline | [PDF](manuscripts/CardioRisk_IMRAD_Outline.pdf) | [Word](manuscripts/CardioRisk_IMRAD_Outline.docx) |
 | Earlier IEEE outline | [PDF](manuscripts/CardioRisk_IEEE_Paper_Outline.pdf) | [Word](manuscripts/CardioRisk_IEEE_Paper_Outline.docx) |
+
+- [Earlier illustrated IEEE manuscript (PDF)](manuscripts/cardiovascular_ieee_imrad_illustrated.pdf)
 
 ## Plans and presentation
 
