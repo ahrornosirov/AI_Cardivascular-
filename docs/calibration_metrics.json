@@ -1,0 +1,60 @@
+{
+  "study_status": "Development-only research comparison; not clinical validation",
+  "design": "5 outer stratified folds; 3 inner folds for calibration; ensemble=False",
+  "n": 8902,
+  "events": 274,
+  "models": {
+    "Original logistic": {
+      "n": 8902,
+      "events": 274,
+      "prevalence": 0.03078,
+      "auroc": 0.776872,
+      "auprc": 0.123704,
+      "brier": 0.028412,
+      "calibration_intercept": -0.124801,
+      "calibration_slope": 0.958293,
+      "mean_predicted": 0.030848
+    },
+    "Sigmoid": {
+      "n": 8902,
+      "events": 274,
+      "prevalence": 0.03078,
+      "auroc": 0.776162,
+      "auprc": 0.122936,
+      "brier": 0.028434,
+      "calibration_intercept": 0.026236,
+      "calibration_slope": 1.00931,
+      "mean_predicted": 0.030811
+    },
+    "Isotonic": {
+      "n": 8902,
+      "events": 274,
+      "prevalence": 0.03078,
+      "auroc": 0.774361,
+      "auprc": 0.115916,
+      "brier": 0.028566,
+      "calibration_intercept": -0.449091,
+      "calibration_slope": 0.850251,
+      "mean_predicted": 0.030814
+    }
+  },
+  "brier_differences_vs_original": {
+    "Sigmoid": {
+      "difference": 2.2e-05,
+      "bootstrap_95pct": [
+        -2.2e-05,
+        6.9e-05
+      ]
+    },
+    "Isotonic": {
+      "difference": 0.000154,
+      "bootstrap_95pct": [
+        -5.5e-05,
+        0.000393
+      ]
+    }
+  },
+  "selected_for_local_demo": "Original logistic",
+  "selection_note": "Prespecified conservative rule; no 2007-2008 outcome used",
+  "interval_note": "Person bootstrap conditional on fixed OOF predictions; NHANES design and model-fitting uncertainty omitted"
+}

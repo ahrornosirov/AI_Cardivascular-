@@ -1,0 +1,68 @@
+{
+  "models": {
+    "Logistic regression": {
+      "n": 8902,
+      "events": 274,
+      "prevalence": 0.03078,
+      "auroc": 0.776872,
+      "auprc": 0.123704,
+      "brier": 0.028412,
+      "calibration_intercept": -0.124801,
+      "calibration_slope": 0.958293
+    },
+    "Random forest": {
+      "n": 8902,
+      "events": 274,
+      "prevalence": 0.03078,
+      "auroc": 0.775568,
+      "auprc": 0.119467,
+      "brier": 0.028552,
+      "calibration_intercept": 0.715779,
+      "calibration_slope": 1.233306
+    },
+    "Histogram gradient boosting": {
+      "n": 8902,
+      "events": 274,
+      "prevalence": 0.03078,
+      "auroc": 0.764722,
+      "auprc": 0.118455,
+      "brier": 0.028665,
+      "calibration_intercept": -0.498772,
+      "calibration_slope": 0.823554
+    }
+  },
+  "differences_vs_logistic": {
+    "Random forest": {
+      "brier": {
+        "difference": 0.00014,
+        "bootstrap_95pct": [
+          -0.000138,
+          0.00042
+        ]
+      },
+      "auroc": {
+        "difference": -0.001304,
+        "bootstrap_95pct": [
+          -0.015438,
+          0.012491
+        ]
+      }
+    },
+    "Histogram gradient boosting": {
+      "brier": {
+        "difference": 0.000253,
+        "bootstrap_95pct": [
+          -0.000182,
+          0.000619
+        ]
+      },
+      "auroc": {
+        "difference": -0.01215,
+        "bootstrap_95pct": [
+          -0.027691,
+          0.003084
+        ]
+      }
+    }
+  }
+}

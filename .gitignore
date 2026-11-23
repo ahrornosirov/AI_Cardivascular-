@@ -5,3 +5,13 @@ data/raw/
 data/processed/
 models/
 results/
+frontend/node_modules/
+frontend/dist/
+.pytest_cache/
+/.chart-data-*/
+/.cumulative-build/
+/.ieee-outline-build/
+/.imrad-outline-build/
+/.presentation-build/
+/.proposal-build/
+/output/
